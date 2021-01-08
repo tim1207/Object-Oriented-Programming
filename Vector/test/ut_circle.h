@@ -13,3 +13,7 @@ class CircleTest : public ::testing::Test { // test fixture, PolygonTest: derive
 TEST_F(CircleTest,primeterTest){
   ASSERT_NEAR(10*M_PI,a.getPrimeter(),0.001);
 }
+
+TEST_F(CircleTest,nameTest){
+  ASSERT_EQ("anonymous",a.getName());
+}

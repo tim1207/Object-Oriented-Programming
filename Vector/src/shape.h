@@ -2,7 +2,6 @@
 #define SHAPE
 #include <string>
 #include <sstream>
-#include <fstream>
 using namespace std;
 
 // base class to Polygon & Circle
@@ -33,13 +32,7 @@ public:
   virtual void fromString(stringstream &s) = 0;
 };
 
-vector <Shape*>objectsFromFile(string fileName){
-  ifstream ifs(fileName);
 
-  vector<Shape*>result;
 
-  
-  return result;
-}
 
 #endif

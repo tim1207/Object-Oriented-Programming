@@ -1,8 +1,10 @@
 #ifndef CIRCLE
 #define CIRCLE
+#include <fstream>
 #include <cmath>
 #include "shape.h"
 #include "vector.h"
+#include "convexPolygon.h"
 
 using namespace std;
 
@@ -39,6 +41,8 @@ public:
     s >>_point;
   }
 };
+
+
 
 
 
