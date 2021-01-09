@@ -1,38 +1,41 @@
 #ifndef SHAPE
 #define SHAPE
 #include <string>
-#include <sstream>
 using namespace std;
 
 // base class to Polygon & Circle
 // no instance -> abstrct class, aka interface
-class Shape {
+class Shape
+{
 protected:
   string _name;
+
 public:
-  Shape(){
+  Shape()
+  {
     //cout << "Constructor in Shape" << endl;
     _name = "nothing";
   }
-  Shape(string name){
+  Shape(string name)
+  {
     _name = name;
   }
-  virtual ~Shape(){
+  virtual ~Shape()
+  {
     //cout << "Shape deconstructor" << endl;
   }
   virtual double getArea() const = 0; // virtual == no definition
   virtual double getPrimeter() const = 0;
-  string getName() const {
+  string getName() const
+  {
     return _name;
   }
   virtual void changeNameTo(string input) = 0;
-  virtual string toString() const {
+  virtual string toString() const
+  {
     return "";
   }
   virtual void fromString(stringstream &s) = 0;
 };
-
-
-
 
 #endif

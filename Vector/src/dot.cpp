@@ -22,5 +22,6 @@ double dot(mathVector const & a, mathVector const & b) {
   for(int i=1;i<=a.dimension();i++){
       output += a.component(i) * b.component(i);
   }
+
   return output;
 }

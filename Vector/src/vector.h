@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <string>
 #include <iostream>
-#include <sstream>
 
 using namespace std;
 
@@ -68,7 +67,7 @@ public:
   mathVector & operator = (mathVector const &input);
   mathVector operator -(const mathVector &input);
   friend ostream & operator << (ostream & output, const mathVector & vec);
-  friend istream & operator >> (istream & input,  mathVector & vec);
+  friend istream & operator >> (istream & input, mathVector & vec);
 };
 
 class angleComparator{
@@ -76,16 +75,12 @@ class angleComparator{
     mathVector _a;
     mathVector _b;
   public:
-
     angleComparator(){
-
     }
-
     angleComparator(mathVector &a, mathVector &b){
       _a = a;
       _b = b;
     }
-
     bool operator ()(mathVector &u, mathVector &v){
       return _b.angle(u-_a)<_b.angle(v-_a);
     }

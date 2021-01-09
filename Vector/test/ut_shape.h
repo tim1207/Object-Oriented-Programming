@@ -2,6 +2,7 @@
 #include "../src/convexPolygon.h"
 #include "../src/circle.h"
 #include "../src/vector.h"
+//#include "../src/util.h"
 #include <array>
 
 class ShapeTest : public ::testing::Test { // test fixture, PolygonTest: derived class, Test: base class
@@ -74,7 +75,7 @@ TEST(TESTSHAPE, case2){
 
 TEST_F(ShapeTest,toStringTest){
   stringstream a,b;
-  a << "Circle" << "{\n" << "Big" << "\n" << "(0,0)" << "\n" << 5 <<"\n" <<"}";
+  a << "Circle " << "{\n" << "Big" << "\n" << "(2,0,0)" << "\n" << 5 <<"\n" <<"}";
   mathVector vectors[4] = {u, v, w, x};
   Polygon p = Polygon::CreatePolygon(4, vectors);
   array<Shape *, 3> shape_array = {new Circle(5, c, "Big"), &p, new Circle(2, c, "Big")};
@@ -82,12 +83,12 @@ TEST_F(ShapeTest,toStringTest){
 }
 
 TEST_F(ShapeTest,fromStringTest){
-  stringstream a;
-  a<<2;
-  Circle c(5,u,"Big");
-  c.fromString(a);
+  Circle c(5, u, "Small");
   stringstream ss;
-  ss << "Circle" << "{\n" << "Big" << "\n" << "(0,0)" << "\n" << 5 <<"\n" <<"}";
+  ss << "Circle " << "{\n" << "Big" << "\n" << "(2,5,5)" << "\n" << 15 <<"\n" <<"}";
+  c.fromString(ss);
   ASSERT_EQ(c.toString(),ss.str());
 
+  //ASSERT_NEAR(((mathVector)c.getPoint()).component(1), 5, 0.001);
+   // mathvector
 }
